@@ -2,5 +2,20 @@
 ~~display game board***
 ~Menu***
 ~User input***
-~Winner Conditions
-~AI
+~Winner Conditions***
+~AI*Basic*
+0 1 2
+3 4 5
+6 7 8
+
+~~~AI 2.0 ~~~
+~Check if the middle is open
+~Check if the corners or open
+~Check of any of the side spaces are open
+Going in method computerMove
+computer_move = AI(something like that)
+AI 2.0 returns computer_move(int)
+
+1 2 3
+4 5 6
+7 8 9
