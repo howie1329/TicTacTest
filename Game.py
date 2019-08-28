@@ -1,3 +1,5 @@
+import random
+
 board = ['1*', '2*', '3*', '4*', '5*', '6*', '7*', '8*', '9*']
 piece = ' '
 computer_piece = ' '
@@ -41,24 +43,33 @@ def setGamePiece(game_piece):
         computer_piece = 'X'
 
 
-def game(game_piece, comp_piece, game_board):
-    counter = 1
+def game():
+    counter = random.randint(1, 2)
     playing = True
     while playing:
         if counter == 1:
-            try:
-                move = int(input('Where would you like to place you piece? '))
-                if 0 < move < 11:
-                    game_board[move - 1] = game_piece
-                    display_board(board, 0, 5)
-                    counter = 2
-                else:
-                    print('The number input was not a valid number')
-            except:
-                print('Please Type a Number')
+            userMove(piece, board)
+            counter = 2
         elif counter == 2:
-            print("Computer's Turn...{}".format(comp_piece))
+            computerMove(computer_piece)
             counter = 1
+
+
+def userMove(game_piece, game_board):
+    try:
+        move = int(input('Where would you like to place you piece? '))
+        if 0 < move < 11:
+            game_board[move - 1] = game_piece
+            display_board(board, 0, 5)
+            counter = 2
+        else:
+            print('The number input was not a valid number')
+    except:
+        print('Please Type a Number')
+
+
+def computerMove(comp_piece):
+    print("Computer's Turn...{}".format(comp_piece))
 
 
 def winning(game_board):
@@ -68,4 +79,4 @@ def winning(game_board):
 menu()
 print(piece)
 print(computer_piece)
-game(piece, computer_piece, board)
+game()
