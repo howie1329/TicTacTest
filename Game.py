@@ -56,8 +56,8 @@ def game():
                 display_board(board, 0, 5)
             else:
                 if not boardCheck(board):
-                    print('Game is a tie')
                     display_board(board, 0, 5)
+                    print('Game is a tie')
                     playing = False
                 else:
                     counter = 2
@@ -68,8 +68,8 @@ def game():
                 playing = False
             else:
                 if not boardCheck(board):
-                    print('Game is a tie')
                     display_board(board, 0, 5)
+                    print('Game is a tie')
                     playing = False
                 else:
                     counter = 1
