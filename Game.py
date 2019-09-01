@@ -10,7 +10,8 @@ def display_board(start_board, loops, rows):
     while loops < rows:
         if loops >= 1:
             loops += 2
-        print(' | ' + start_board[loops] + ' | ' + start_board[loops + 1] + ' | ' + start_board[loops + 2] + ' | ')
+        print(' | ' + start_board[loops] + ' | ' +
+              start_board[loops + 1] + ' | ' + start_board[loops + 2] + ' | ')
         print(' -------------')
         loops += 1
 
@@ -25,9 +26,9 @@ def menu():
     user_input = input("Do you want to play? (yes or no) ")
     if user_input.lower() == 'yes' or 'y':
         print('Lets get started')
-        player_piece = input('What letter would you like to be? (X or O) ').upper()
+        player_piece = input(
+            'What letter would you like to be? (X or O) ').upper()
         setGamePiece(player_piece)
-        display_board(board, 0, 5)
     elif user_input.lower() == 'no' or 'n' or 'exit':
         print('Thanks for playing')
     else:
@@ -65,6 +66,7 @@ def game():
             computerMove(computer_piece, board, player_piece)
             if winningCheck(board, computer_piece):
                 print('The Computer has won')
+                display_board(board, 0, 5)
                 playing = False
             else:
                 if not boardCheck(board):
@@ -73,7 +75,6 @@ def game():
                     playing = False
                 else:
                     counter = 1
-    display_board(board, 0, 5)
 
 
 def userMove(game_piece, game_board):
